@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
-import GithubProvider from "next-auth/providers/spotify"
+import SpotifyProvider from "next-auth/providers/spotify"
+
 
 
 export default NextAuth = {
