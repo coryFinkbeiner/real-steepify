@@ -1,4 +1,4 @@
-import {useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import { ChevronDownIcon } from "@heroicons/react/outline"
 
 function Center() {
@@ -20,6 +20,7 @@ function Center() {
       <section className={'flex items-end space-x-7 bg-gradient-to-b from-red-500 h-80 text-white padding-8'}>
         <img src='' alt='' />
       </section>
+        <h1>hello</h1>
     </div>
   )
 }
