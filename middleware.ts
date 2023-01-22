@@ -12,12 +12,11 @@ export async function middleware(req) {
   //   1) It's a request for next-auth session & provider fetching
   //   2) the token exists
   if (pathname.includes('/api/auth') || token) {
-    console.log('middle success')
     return NextResponse.next()
   }
 
 
-  
+
   // // Redirect them to login if they don't have token AND are requesting a protected route
   // if (!token  && pathname !== "/login") {
   //   console.log('middle redirect')
