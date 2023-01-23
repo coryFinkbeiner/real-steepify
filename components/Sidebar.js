@@ -24,9 +24,6 @@ function Sidebar() {
     }
   }, [session, spotifyApi]);
 
-  console.log(playlists)
-
-
   return (
     <div className='text-gray-500 p-5 text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen'>
       <div className='space-y-4'>
@@ -63,21 +60,15 @@ function Sidebar() {
         <hr className='border-t-[0.1px] border-gray-900'/>
 
         {/* Playlists */}
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
-        <p className='cursor-pointer hover:text-white'>Playlist name...</p>
 
+        {playlists.map((playlist) => (
+           <p key={playlist.id} className='cursor-pointer hover:text-white'>
+             {playlist.name}
+            </p>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default Sidebar
