@@ -26,8 +26,6 @@ function Center() {
   const playlistId = useRecoilValue(playlistIdState);
   const [playlist, setPlaylist] = useRecoilState(playlistState);
 
-  console.log('checking id', playlistId)
-
   useEffect(() => {
     setColor(shuffle(colors).pop());
   }, [playlistId]);
@@ -41,10 +39,8 @@ function Center() {
       .catch((err) => console.log('ERROR', err));
   }, [spotifyApi, playlistId]);
 
-  console.log('checking playlist', playlist)
-
   return (
-    <div className='flex-grow'>
+    <div className='flex-grow h-screen overflow-y-scroll scrollbar-hide'>
       <header className='absolute top-5 right-8'>
         <div className='flex items-center bg-black space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 text-white'>
           <img
