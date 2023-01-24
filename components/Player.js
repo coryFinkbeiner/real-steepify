@@ -1,4 +1,16 @@
-import { SwitchHorizontalIcon } from '@heroicons/react/outline';
+import {
+  HeartIcon,
+  VolumeUpIcon as VolumeDownIcon
+} from '@heroicons/react/outline';
+import {
+  FastForwardIcon,
+  PauseIcon,
+  PlayIcon,
+  ReplyIcon,
+  RewindIcon,
+  VolumeUpIcon,
+  SwitchHorizontalIcon
+} from '@heroicons/react/solid';
 import { useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 import { useRecoilState } from 'recoil';
@@ -28,6 +40,18 @@ function Player() {
     }
   };
 
+  const handlePlayPause = () => {
+    spotifyApi.getMyCurrentPlaybackState().then((data) => {
+      if (data.body.is_playing) {
+        spotifyApi.pause();
+        setIsPlaying(false);
+      } else {
+        spotifyApi.play();
+        setIsPlaying(true);
+      }
+    });
+  };
+
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
       // fetch the song info
@@ -52,8 +76,38 @@ function Player() {
       </div>
 
       {/* Center */}
-      <div>
-        <SwitchHorizontalIcon className='w-5 h-5' />
+      <div className='flex items-center justify-evenly'>
+        <SwitchHorizontalIcon className='button' />
+        <RewindIcon
+          // onClick{() => spotifyApi.skipToPrevious()} -- The API is not working
+          className='button'
+        />
+
+        {isPlaying ? (
+          <PauseIcon onClick={handlePlayPause} className='button w-10 h-10' />
+        ) : (
+          <PlayIcon onClick={handlePlayPause} className='button w-10 h-10' />
+        )}
+
+        <FastForwardIcon
+          // onClick={() => spotifyApi.skipToNext()} -- The API is not working
+          className='button'
+        />
+        <ReplyIcon className='button' />
+      </div>
+
+      {/* Right */}
+      <div className='flex items-center space-x-3 md:space-x-4 justify-end pr-5'>
+        <VolumeDownIcon className='button' />
+        <input
+          className='w-14 md:w-28'
+          type='range'
+          value={volume}
+          // onChange=
+          min={0}
+          max={100}
+        />
+        <VolumeUpIcon className='button' />
       </div>
     </div>
   );
