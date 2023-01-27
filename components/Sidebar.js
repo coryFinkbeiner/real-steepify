@@ -47,7 +47,7 @@ function Sidebar() {
 
         <button className='flex items-center space-x-2 hover:text-white'>
           <PlusCircleIcon className='h-5 w-5'/>
-          <p>Create Playlist</p>
+          <p>Thread Albums</p>
         </button>
         <button className='flex items-center space-x-2 hover:text-white'>
           <HeartIcon className='h-5 w-5'/>
