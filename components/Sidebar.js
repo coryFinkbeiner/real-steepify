@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import useSpotify from "../hooks/useSpotify";
 import { playlistIdState } from "../atoms/playlistAtom";
 import { useRecoilState } from 'recoil'
+import Link from 'next/link';
 
 
 
@@ -44,11 +45,12 @@ function Sidebar() {
           <p>Your Library</p>
         </button>
         <hr className='border-t-[0.1px] border-gray-900'/>
-
-        <button className='flex items-center space-x-2 hover:text-white'>
-          <PlusCircleIcon className='h-5 w-5'/>
-          <p>Thread Albums</p>
-        </button>
+        <Link href='thread'>
+          <button className='flex items-center space-x-2 hover:text-white'>
+            <PlusCircleIcon className='h-5 w-5'/>
+            <p>Thread Albums</p>
+          </button>
+        </Link>
         <button className='flex items-center space-x-2 hover:text-white'>
           <HeartIcon className='h-5 w-5'/>
           <p>Liked Songs</p>
@@ -58,7 +60,7 @@ function Sidebar() {
           <p>Your Episodes</p>
         </button>
         <hr className='border-t-[0.1px] border-gray-900'/>
-
+        
         {playlists.map((playlist) => (
           <p
             key={playlist.id}
