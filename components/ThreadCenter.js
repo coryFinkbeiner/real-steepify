@@ -9,7 +9,7 @@ function ThreadCenter() {
 
       {/* search bar */}
       <div className=''>
-        <form className='bg-white text-gray-500 flex flex-row rounded-full m-3 p-1 w-1/3'>
+        <form className='bg-white text-gray-500 flex flex-row rounded-full m-3 p-1 w-2/5'>
           <button className='flex items-center space-x-2 hover:text-black m-1'>
             <SearchIcon className='w-5 h-5'/>
           </button>

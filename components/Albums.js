@@ -1,4 +1,4 @@
-
+import Album from './Album'
 
 function Albums() {
 
@@ -6,9 +6,12 @@ function Albums() {
 
   return (
 
-    <div className='h-full bg-red-500'>
+    <div className='h-full bg-red-500 grid grid-cols-4'>
 
-      Albums
+      {searchedAlbums.map((album, i) => (
+        <Album />
+      ))}
+
 
     </div>
   );
