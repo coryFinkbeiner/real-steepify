@@ -24,7 +24,7 @@ function Player() {
   const { data: session, status } = useSession();
   const [currentTrackId, setCurrentTrackId] = useRecoilState(currentTrackIdState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
-  const [volume, setVolume] = useState(50)
+  const [volume, setVolume] = useState()
 
   const songInfo = useSongInfo();
 
@@ -56,7 +56,7 @@ function Player() {
   useEffect(() => {
     if (spotifyApi.getAccessToken() && !currentTrackId) {
       fetchCurrentSong();
-      setVolume(50);
+      // setVolume(50);
     }
   }, [currentTrackIdState, spotifyApi, session]);
 

@@ -60,8 +60,8 @@ function Sidebar() {
           <p>Your Episodes</p>
         </button>
         <hr className='border-t-[0.1px] border-gray-900'/>
-        
-        {playlists.map((playlist) => (
+
+        {/* {playlists.map((playlist) => (
           <p
             key={playlist.id}
             onClick={() => setPlaylistId(playlist.id)}
@@ -69,7 +69,7 @@ function Sidebar() {
           >
             {playlist.name}
           </p>
-        ))}
+        ))} */}
 
       </div>
     </div>
