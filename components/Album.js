@@ -17,6 +17,9 @@ function Album() {
       <p className='truncate font-semibold'>
         Album Name slkd lkjd lkjs  slk jlkasj
       </p>
+      <p className='truncate text-sm'>
+        2008 dot Radiohead laskdlfjsadlkjfds
+      </p>
 
     </div>
   );
