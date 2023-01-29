@@ -8,7 +8,7 @@ function Album() {
 
   return (
 
-    <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer'>
+    <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer' onClick={()=>console.log('sadfasd')}>
 
       <div  className='relative '>
 
@@ -18,7 +18,7 @@ function Album() {
           alt=''
         />
 
-        <PlusIcon  className='text-black absolute h-1/3 bottom-2.5 right-2.5 bg-green-500 rounded-full hidden group-hover:block'/>
+        <PlusIcon className='text-black absolute h-1/3 bottom-2.5 right-2.5 bg-green-500 rounded-full hidden group-hover:block' />
 
       </div>
 

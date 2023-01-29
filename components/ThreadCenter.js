@@ -21,14 +21,10 @@ function ThreadCenter() {
         </form>
       </div>
 
-
       {/* render search results */}
       <div className='h-full'>
         <Albums />
       </div>
-
-
-
 
     </div>
   );

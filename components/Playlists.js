@@ -6,8 +6,6 @@ import { playlistIdState } from "../atoms/playlistAtom";
 import { useRecoilState } from 'recoil'
 import Link from 'next/link';
 
-
-
 function Playlists() {
   const spotifyApi = useSpotify();
   const { data: session, status } = useSession();
