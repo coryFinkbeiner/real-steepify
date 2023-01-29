@@ -8,7 +8,7 @@ function Album() {
 
   return (
 
-    <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer' onClick={()=>console.log('sadfasd')}>
+    <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer'>
 
       <div  className='relative '>
 
