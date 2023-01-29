@@ -1,4 +1,4 @@
-import { PlusCircleIcon } from '@heroicons/react/outline';
+import { PlusIcon } from '@heroicons/react/solid';
 
 
 
@@ -18,7 +18,7 @@ function Album() {
           alt=''
         />
 
-        <PlusCircleIcon  className='text-black absolute h-1/3 bottom-2.5 right-2.5 bg-green-500 rounded-full hidden group-hover:block'/>
+        <PlusIcon  className='text-black absolute h-1/3 bottom-2.5 right-2.5 bg-green-500 rounded-full hidden group-hover:block'/>
 
       </div>
 
