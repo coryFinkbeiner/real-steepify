@@ -7,7 +7,7 @@ export const searchResultsState = atom({
 
 export const bankedAlbumsState = atom({
   key: 'bankedAlbumsState',
-  default: null
+  default: []
 });
 
 

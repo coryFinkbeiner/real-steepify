@@ -1,16 +1,27 @@
 import { PlusIcon } from '@heroicons/react/solid';
+import { bankedAlbumsState } from "../atoms/albumsAtom";
+import { useRecoilState } from 'recoil';
 
 
 
 
-function Album({ albumCover, name, year, artist }) {
+
+function Album({ albumCover, name, year, artist, albumObject }) {
+
+  const [bank, setBank] = useRecoilState(bankedAlbumsState);
+  // console.log({bank})
 
 
   return (
 
     <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer'>
 
-      <div  className='relative '>
+      <div
+        className='relative'
+        onClick={() => { setBank([...bank, albumObject]) }}
+
+      >
+
 
         <img
           className='w-full h-2/3 rounded p-1'
