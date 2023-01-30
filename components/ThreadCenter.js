@@ -8,8 +8,8 @@ import useSpotify from "../hooks/useSpotify";
 
 
 function ThreadCenter() {
-
   const [input, setInput] = useState('');
+  const spotifyApi = useSpotify();
 
   const handleChange = e => {
     e.preventDefault()
@@ -20,7 +20,10 @@ function ThreadCenter() {
   const handleSubmit = e => {
     e.preventDefault()
 
-    
+    spotifyApi.searchAlbums(input)
+      .then(data => {
+        console.log(data)
+      })
 
   }
 
