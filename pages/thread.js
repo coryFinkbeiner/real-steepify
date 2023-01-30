@@ -14,9 +14,9 @@ export default function Thread() {
     <div className="bg-black h-screen overflow-hidden">
 
       <main className='flex'>
-        <div className='text-gray-500 p-5 text-xs lg:text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36'>
+        <div className='text-gray-500 p-1 text-xs lg:text-sm border-r overflow-y-scroll scrollbar-hide h-screen sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex pb-36'>
 
-          <div className='space-y-4'>
+          <div className='space-y-4 w-[566px]'>
             <TopBar />
             <Bank />
           </div>
