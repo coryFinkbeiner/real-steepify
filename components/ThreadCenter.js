@@ -1,20 +1,20 @@
 import { SearchIcon, XIcon } from '@heroicons/react/outline';
 import Albums from './Albums';
-import { searchTermState } from '../atoms/searchAtom';
 import { useRecoilState } from 'recoil';
 import { useEffect, useState } from 'react';
 import useSpotify from "../hooks/useSpotify";
+import { searchResultsState } from "../atoms/albumsAtom";
 
 
 
 function ThreadCenter() {
   const [input, setInput] = useState('');
   const spotifyApi = useSpotify();
+  const [searchResults, setSearchResults] = useRecoilState(searchResultsState);
 
   const handleChange = e => {
     e.preventDefault()
     setInput(e.target.value)
-    console.log({input})
   }
 
   const handleSubmit = e => {
@@ -22,7 +22,8 @@ function ThreadCenter() {
 
     spotifyApi.searchAlbums(input)
       .then(data => {
-        console.log(data)
+        setSearchResults(data.body.albums.items)
+        
       })
 
   }
