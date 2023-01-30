@@ -15,7 +15,11 @@ function Albums() {
       {searchedAlbums.map((album, i) => (
         <Album
           key={i}
-          
+          albumCover={album.images[2].url}
+          name={album.name}
+          year={album.release_date.split('-')[0]}
+          artist={album.artists[0].name}
+
         />
       ))}
 

@@ -3,7 +3,7 @@ import { PlusIcon } from '@heroicons/react/solid';
 
 
 
-function Album() {
+function Album({ albumCover, name, year, artist }) {
 
 
   return (
@@ -14,7 +14,7 @@ function Album() {
 
         <img
           className='w-full h-2/3 rounded p-1'
-          src='https://media.pitchfork.com/photos/5929b2fe9d034d5c69bf4c59/1:1/w_320,c_limit/7055fb4d.jpg'
+          src={albumCover}
           alt=''
         />
 
@@ -24,10 +24,10 @@ function Album() {
 
 
       <p className='truncate font-semibold'>
-        Album Name slkd lkjd lkjs  slk jlkasj
+        {name}
       </p>
       <p className='truncate text-sm'>
-        2008 dot Radiohead laskdlfjsadlkjfds
+        {year} *dot {artist}
       </p>
 
     </div>
