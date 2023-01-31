@@ -7,7 +7,7 @@ import { searchResultsState } from "../atoms/albumsAtom";
 
 
 
-function ThreadCenter() {
+function Search() {
   const [input, setInput] = useState('');
   const spotifyApi = useSpotify();
   const [searchResults, setSearchResults] = useRecoilState(searchResultsState);
@@ -23,7 +23,7 @@ function ThreadCenter() {
     spotifyApi.searchAlbums(input)
       .then(data => {
         setSearchResults(data.body.albums.items)
-        
+
       })
 
   }
@@ -63,4 +63,4 @@ function ThreadCenter() {
   );
 }
 
-export default ThreadCenter
+export default Search;

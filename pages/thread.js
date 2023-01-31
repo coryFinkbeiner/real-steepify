@@ -2,8 +2,9 @@
 import TopBar from '../components/TopBar'
 import Player from '../components/Player';
 import Playlists from '../components/Playlists'
-import ThreadCenter from '../components/ThreadCenter'
+import Search from '../components/Search'
 import Bank from '../components/Bank'
+import Post from '../components/Post'
 
 
 // import { getSession } from 'next-auth/react';
@@ -21,7 +22,8 @@ export default function Thread() {
             <Bank />
           </div>
         </div>
-        <ThreadCenter />
+        {/* add conditional render for bank being full */}
+        <Post />
       </main>
 
       <div className='sticky bottom-0'>
