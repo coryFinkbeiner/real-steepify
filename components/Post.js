@@ -2,7 +2,7 @@ import { ChevronDownIcon } from '@heroicons/react/outline';
 import { useEffect, useState } from 'react';
 import { shuffle } from 'lodash';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import Songs from './Songs';
+import ThreadedSongs from './ThreadedSongs';
 
 import useSpotify from '../hooks/useSpotify'
 
@@ -72,7 +72,7 @@ function Post() {
       </section>
 
       <div>
-        <Songs />
+        <ThreadedSongs />
       </div>
 
     </div>
