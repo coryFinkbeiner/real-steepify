@@ -21,7 +21,7 @@ function Bank() {
 
           {bank?.map((album, i) => (
 
-            <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer w-full'>
+            <div className='bg-gray-500 space-y-1 border border-white rounded p-2 h-[228px] group cursor-pointer w-[180px] self-center'>
 
               <div
                 className='relative'
@@ -35,7 +35,7 @@ function Bank() {
 
 
                 <img
-                  className='w-full h-1/2 rounded p-1'
+                  className='w-full h-[160px] rounded p-1'
                   src={album.images[2].url}
                   alt=''
                 />
