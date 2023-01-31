@@ -1,15 +1,23 @@
-
 import TopBar from '../components/TopBar'
 import Player from '../components/Player';
 import Playlists from '../components/Playlists'
 import Search from '../components/Search'
 import Bank from '../components/Bank'
 import Post from '../components/Post'
+import { useRecoilState } from 'recoil';
+import { useEffect, useState } from 'react';
+import useSpotify from "../hooks/useSpotify";
+import { bankedAlbumsState } from "../atoms/albumsAtom";
+
+
 
 
 // import { getSession } from 'next-auth/react';
 
 export default function Thread() {
+
+  const [bank, setBank] = useRecoilState(bankedAlbumsState);
+
 
   return (
     <div className="bg-black h-screen overflow-hidden">
@@ -22,8 +30,8 @@ export default function Thread() {
             <Bank />
           </div>
         </div>
-        {/* add conditional render for bank being full */}
-        <Post />
+        {bank.length === 3 ? <Post /> : <Search />}
+
       </main>
 
       <div className='sticky bottom-0'>

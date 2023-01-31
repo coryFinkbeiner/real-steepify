@@ -3,7 +3,7 @@ import { bankedAlbumsState } from '../atoms/albumsAtom';
 import Song from './Song'
 
 
-function Songs() {
+function ThreadedSongs() {
   const playlist = useRecoilValue(playlistState)
 
   // need to pass the bankedAlbums through the threading function.
@@ -17,4 +17,4 @@ function Songs() {
   )
 }
 
-export default Songs;
+export default ThreadedSongs;

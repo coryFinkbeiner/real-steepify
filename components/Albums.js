@@ -5,7 +5,7 @@ import { searchResultsState } from "../atoms/albumsAtom";
 
 function Albums() {
 
-  const searchedAlbums = useRecoilValue(searchResultsState)
+  const searchedAlbums = useRecoilValue(searchResultsState);
 
   return (
 
