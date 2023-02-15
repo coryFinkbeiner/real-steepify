@@ -7,28 +7,49 @@ import useSpotify from '../hooks/useSpotify';
 
 function ThreadedSongs() {
   const bank = useRecoilValue(bankedAlbumsState);
-  const [threadedTracks, setThreadedTracks] = useState([]);
   const spotifyApi = useSpotify();
   const [trackList, setTrackList] = useState([])
 
 
-  // const threadedAlbumIds = threader function
+  // I GUESS I SHOULD THREAD THEM FIRST...
 
 
+
+  // I THINK YOU WILL NOT KEEP THIS
   useEffect(() => {
-
     spotifyApi.getAlbumTracks(bank[0].id)
       .then(data => {
-        setTrackList(data.body.items)
+        setTrackList([data.body.items])
         spotifyApi.getAlbumTracks(bank[1].id)
         .then(data => {
-          setTrackList([...trackList, ...data.body.items])
-          spotifyApi.getAlbumTracks(bank[2].id)
-          .then(data => {
-            setTrackList([...trackList, ...data.body.items])
-          })
+
+          console.log('2', data.body.items)
+
+          setTrackList([...trackList, data.body.items])
+          console.log({trackList})
+
+
+        //   spotifyApi.getAlbumTracks(bank[2].id)
+        //   .then(data => {
+
+
+        //     setTrackList([...trackList, ...data.body.items])
+
+
+        //     var thread = trackList.slice()
+        //     console.log({thread})
+
+        //   })
+
         })
+
       })
+
+
+
+
+
+
 
   }, [bank, spotifyApi]);
 
