@@ -55,7 +55,7 @@ function Post() {
           <input
 
             className='text-black h-[40px] w-[300px] rounded p-2'
-            onChange={(e) => console.log(e.target.value)}
+            // onChange={(e) => console.log(e.target.value)}
           />
           <button
             className='bg-green-500 rounded w-[90px] h-[40px] p-2'
