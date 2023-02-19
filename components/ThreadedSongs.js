@@ -29,6 +29,36 @@ function ThreadedSongs() {
 
   }, [spotifyApi, bank])
 
+  useEffect(() => {
+
+    var a1 = album1.slice()
+    var a2 = album2.slice()
+    var a3 = album3.slice()
+
+    var array = [a1, a2, a3]
+
+    var newPlaylist = []
+    var count = 0
+
+    while (count < 3) {
+      for (let i = 0; i < array.length; i++) {
+        if (!array[i].length) {
+          array.splice(i, 1)
+          count++
+          i--
+        } else {
+          newPlaylist.push(array[i].shift())
+        }
+      }
+    }
+
+
+    setTrackList(newPlaylist)
+
+
+
+  }, [spotifyApi, album1, album2, album3])
+
 
   return (
     <div className='px-8 flex flex-col space-y-1 pb-28 text-white'>
