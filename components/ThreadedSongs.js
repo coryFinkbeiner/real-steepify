@@ -1,6 +1,6 @@
 import { useRecoilValue } from 'recoil';
 import { bankedAlbumsState } from '../atoms/albumsAtom';
-import Song from './Song'
+import ThreadedSong from './ThreadedSong'
 import { useEffect, useState } from 'react';
 import useSpotify from '../hooks/useSpotify';
 
@@ -47,9 +47,9 @@ function ThreadedSongs() {
 
   return (
     <div className='px-8 flex flex-col space-y-1 pb-28 text-white'>
-      {/* {trackList?.map((track, i) => (
-        <Song key={track.id} track={track} order={i}/>
-      ))} */}
+      {trackList?.map((track, i) => (
+        <ThreadedSong key={track.id} track={track} order={i}/>
+      ))}
     </div>
   )
 
