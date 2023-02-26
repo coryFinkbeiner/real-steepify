@@ -13,6 +13,8 @@ function ThreadedSongs() {
   const [album2, setAlbum2] = useState([])
   const [album3, setAlbum3] = useState([])
 
+  console.log({bank})
+
   useEffect(() => {
     spotifyApi.getAlbumTracks(bank[0].id)
       .then(data => setAlbum1(data.body.items))
