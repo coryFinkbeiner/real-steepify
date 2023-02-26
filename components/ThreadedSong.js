@@ -24,16 +24,16 @@ function ThreadedSong({ order, track }) {
         <p>{order + 1}</p>
         <img
           className='h-10 w-10'
-          src=''
+          src={track.album_image}
           alt=''
         />
         <div>
-          <p className='w-36 lg:w-64 text-white truncate'>track name</p>
-          <p className='w-40'>artist name</p>
+          <p className='w-36 lg:w-64 text-white truncate'>{track.name}</p>
+          <p className='w-40'>{track.artists[0].name}</p>
         </div>
       </div>
       <div className='flex items-center justify-between ml-auto md:ml-0'>
-        <p className='w-40 hidden md:inline'>album name</p>
+        <p className='w-40 hidden md:inline'>{track.album_name}</p>
         <p>time</p>
       </div>
     </div>
